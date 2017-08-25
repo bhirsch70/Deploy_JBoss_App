@@ -1,0 +1,7 @@
+---
+- name: Deploy Java application
+  hosts: all
+  become: true
+
+  roles:
+    - java-app
