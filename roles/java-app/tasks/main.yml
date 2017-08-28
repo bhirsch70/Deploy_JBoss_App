@@ -1,7 +1,7 @@
 ---
 - name: Copy application WAR file to host
   copy:
-    src: ticket-monster.war
+    src: "{{ java_app }}"
     dest: /tmp
   tags:
     - deploy
@@ -9,8 +9,8 @@
 - name: Deploy Ticket Monster to JBoss
   jboss:
     deploy_path: /usr/share/jboss-as/standalone/deployments/
-    src: /tmp/ticket-monster.war
-    deployment: ticket-monster.war
+    src: /tmp/"{{ java_app }}"
+    deployment: "{{ java_app }}"
     state: present
   tags:
     - deploy
