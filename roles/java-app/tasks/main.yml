@@ -9,7 +9,7 @@
 - name: Deploy Ticket Monster to JBoss
   jboss:
     deploy_path: /usr/share/jboss-as/standalone/deployments/
-    src: /tmp/"{{ java_app }}"
+    src: /tmp/{{ java_app }}
     deployment: "{{ java_app }}"
     state: present
   tags:
